@@ -717,7 +717,7 @@ with tabs[3]:
         styled = df.style \
             .background_gradient(subset=["Proaktiv Faiz (%)"], cmap="Blues") \
             .background_gradient(subset=["Vətəndaş Məmnunluğu (%)"], cmap="Greens") \
-            .applymap(lambda v: "color:#ff7b72;" if isinstance(v, (int,float)) and v > faktiki_cutoff else "", subset=["İl"])
+            .map(lambda v: "color:#ff7b72;" if isinstance(v, (int,float)) and v > faktiki_cutoff else "", subset=["İl"])
         return styled
     st.dataframe(style_macro(df_macro), use_container_width=True, hide_index=True)
 
