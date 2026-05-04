@@ -638,7 +638,7 @@ with tabs[2]:
             "Gözlənilən istehlak", "Sabit vəziyyəti keçmə ehtimalı", "20% üstəgəl keçmə ehtimalı",
         ]
     })
-    st.dataframe(mc_stats.style.applymap(
+    st.dataframe(mc_stats.style.map(
         lambda v: "color:#3fb950;" if "%" in str(v) and float(v.rstrip('%')) > 50 else
                   ("color:#ff7b72;" if "%" in str(v) and float(v.rstrip('%')) < 30 else ""),
         subset=["Dəyər"]
